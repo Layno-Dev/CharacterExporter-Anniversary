@@ -1,0 +1,10 @@
+## Interface: 20505
+## Title: CharacterExporter
+## Author: LaynoZ
+## Version: 0.1
+## Notes: Character Exporter for WoW TBC Anniversary
+
+Core.lua
+Modules/Character.lua
+Modules/Equipment.lua
+Modules/UI.lua
