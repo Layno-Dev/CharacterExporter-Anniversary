@@ -1,7 +1,7 @@
 CharacterExporter = {}
 
 CharacterExporter.name = "CharacterExporter"
-CharacterExporter.version = "0.1"
+CharacterExporter.version = "1.0"
 
 function CharacterExporter:Log(message)
     DEFAULT_CHAT_FRAME:AddMessage(
