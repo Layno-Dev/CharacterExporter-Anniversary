@@ -58,15 +58,16 @@ end
 
 -- 3. Main function called via /cexport
 function CharacterExporter:ExportCharacter()
-    -- Generate the data and text
-    local data = self:BuildCharacterData()
-    local text = self:ExportToText(data)
+    -- 1. Build the data (Back-End)
+    local characterData = self:BuildCharacterData()
     
-    -- Priority 5: Temporal Persistence
-    -- Save the latest data and text into the addon's global table
-    self.lastCharacterData = data
-    self.lastExportText = text
+    -- 2. Convert to text (Back-End)
+    local exportString = self:ExportToText(characterData)
     
-    -- Print the saved text to chat
-    self:Log("\n" .. self.lastExportText)
+    -- 3. Temporary persistence 
+    self.lastCharacterData = characterData
+    self.lastExportText = exportString
+    
+    -- 4. STEP 4: Open the UI instead of printing to chat
+    self:ShowExportUI()
 end
